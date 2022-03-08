@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HW3 SSUI</title>
+  </head>
+
+  <body>
+    <!-- controls -->
+    <div id="controls">
+
+      <!-- layers -->
+      <div class="control">
+        <h3>Layers:</h3>
+
+        <div class="switch">
+          <input type="radio" id="radio-show-canvas" name="layers-selection" />
+          <label for="radio-show-canvas">Show Canvas layer</label>
+        </div>
+        <div class="switch">
+          <input type="radio" id="radio-show-svg" name="layers-selection" />
+          <label for="radio-show-svg">Show SVG layer</label>
+        </div>
+        <div class="switch">
+          <input type="radio" id="radio-show-both" name="layers-selection" />
+          <label for="radio-show-both">Show both layers</label>
+        </div>
+      </div>
+
+      <!-- modes -->
+      <div class="control">
+        <h3>Mode:</h3>
+        <div class="modes" id="modes-selection">
+          <div class="mode" id="mode-select">
+            <img src="assets/cursor.png" />
+          </div>
+          <div class="mode" id="mode-line"><img src="assets/line.png" /></div>
+          <div class="mode" id="mode-rect">
+            <div
+              style="
+                background-color: yellow;
+                width: 40px;
+                height: 30px;
+                border: 2px solid lightgray;
+              "
+            ></div>
+          </div>
+          <div class="mode" id="mode-ellipse">
+            <div
+              style="
+                background-color: yellow;
+                width: 36px;
+                height: 36px;
+                border: 2px solid lightgray;
+                border-radius: 50%;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- border color -->
+      <div class="control">
+        <h3>Border color:</h3>
+        <div class="modes" id="border-color-selection">
+          <div class="mode">
+            <div
+              class="color-block"
+              style="border: none; background-color: transparent"
+            >
+              None
+            </div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #fff"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #bfbfbf"></div>
+          </div>
+          <div class="mode active">
+            <div class="color-block" style="background-color: #000"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #fffe55"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #ea3323"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #4faeea"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #9fce63"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- border width -->
+      <div class="control">
+        <h3>Border width:</h3>
+        <div style="display: flex; align-items: center">
+          <input
+            type="range"
+            id="borderWidthRange"
+            name="borderWidth"
+            style="width: 200px"
+            min="1"
+            max="30"
+            value="3"
+          />
+          &nbsp;&nbsp;&nbsp;
+          <span id="borderWidthValue">3</span>
+        </div>
+      </div>
+
+      <!-- fill -->
+      <div class="control">
+        <h3>Fill color:</h3>
+        <div class="modes" id="fill-color-selection">
+          <div class="mode">
+            <div
+              class="color-block"
+              style="border: none; background-color: transparent"
+            >
+              None
+            </div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #fff"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #bfbfbf"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #000"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #fffe55"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #ea3323"></div>
+          </div>
+          <div class="mode">
+            <div class="color-block" style="background-color: #4faeea"></div>
+          </div>
+          <div class="mode active">
+            <div class="color-block" style="background-color: #9fce63"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- delete -->
+      <div class="control">
+        <h3>Delete:</h3>
+        <div class="delete-buttons-container">
+          <button onclick="deleteOne()">Delete</button> &nbsp;
+          <button onclick="deleteAll()">Delete All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- workspace -->
+    <div id="workspace">
+      <canvas id="workspace-canvas" width="800" height="800"></canvas>
+      <svg id="workspace-svg" width="800" height="800"></svg>
+    </div>
+
+    <!-- script -->
+    <!-- <script type="module" src="index.js"></script> -->
+    <script src="floodfill.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

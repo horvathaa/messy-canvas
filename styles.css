@@ -1,0 +1,126 @@
+body {
+  font-family: Verdana, sans-serif;
+
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+}
+
+#controls {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: white;
+
+  width: 300px;
+  height: 800px;
+}
+
+#controls .control {
+  padding: 2px 10px;
+  margin: 5px 0px;
+}
+
+#controls .control:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.control .delete-buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-buttons-container button {
+  width: 40%;
+}
+
+#controls .control .switch {
+  user-select: none;
+}
+
+#controls .control .switch label {
+  cursor: pointer;
+}
+
+.modes {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.mode {
+  flex-shrink: 0;
+  margin: 2px 5px;
+  width: 56px;
+  height: 50px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode.active {
+  border-radius: 5px;
+  border: 2px solid blue;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.modes.disabled .mode {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.mode img {
+  max-width: 60%;
+  max-height: 70%;
+}
+
+.mode .color-block {
+  width: 40px;
+  height: 30px;
+  border: 1px solid lightgray;
+}
+
+#workspace {
+  position: absolute;
+  top: 30px;
+  left: 330px;
+
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-left-width: 0px;
+  background-color: white;
+
+  width: 800px;
+  height: 800px;
+}
+
+#workspace-canvas,
+#workspace-svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* width: 800px;
+  height: 700px; */
+}
+
+#workspace-canvas {
+  /* background-color: rgba(0, 255, 0, 0.05); */
+}
+
+#workspace-svg {
+  /* background-color: rgba(255, 0, 0, 0.05); */
+}
+
+#workspace-canvas-temp {
+  /* background-color: blue; */
+}
